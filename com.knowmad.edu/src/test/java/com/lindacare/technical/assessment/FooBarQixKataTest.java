@@ -5,6 +5,8 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
+import junit.framework.Assert;
+
 @FixMethodOrder(value = MethodSorters.NAME_ASCENDING)
 public class FooBarQixKataTest {
 	
@@ -26,20 +28,33 @@ public class FooBarQixKataTest {
 		String str=kata.compute(number);
 		
 		
-		System.out.println("value is : "+str);
+		if (str.equals("FooFoo"))
+			System.out.println("expected value is FooFoo and actual value is:="+str);
+		else
+			System.out.println("do not match");
 		
-				
+			//in below code we are passing different integer values and expect result to be like that	
 		int number1 = 33;
 				
 				// Act
 				String str1=kata.compute(number1);
-				System.out.println("value is : "+str1);
 				
+				
+				if (str1.equals("FooFooFoo"))
+					System.out.println("expected value is FooFoofoo and actual value is:="+str1);
+				else
+					System.out.println("do not match");
+			
 		int number2 = 105;
 				
 				// Act
 				String str2=kata.compute(number2);
-				System.out.println("value is : "+str2);
+				
+				if (str2.equals("FooBarQix*Bar"))
+					System.out.println("expected value is FooBarQix*Bar and actual value is:="+str2);
+				else
+					System.out.println("do not match");
+				
 				
 		int number3 = 21;
 				
